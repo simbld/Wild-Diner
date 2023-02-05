@@ -8,7 +8,7 @@ export default function Home() {
     <header className="App-header">
       <h2>
         Ici le carousel
-        <span className="navbar">
+        <span className="Nav-bar">
           <MealsCard />
         </span>
         !

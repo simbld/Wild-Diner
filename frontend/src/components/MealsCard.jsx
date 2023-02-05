@@ -27,11 +27,11 @@ export default function MealsCard({
       </div>
       <div className="cardDescription">
         <div className="media">
-          <div className="media-content">
+          <div className="mediaContent">
             <p className="rightContainer">{mealName}</p>
-            <p className="subtitle is-6">{price} €</p>
+            <p className="rightSubtitleContainer">{price} €</p>
 
-            <p className="subtitle is-6">{description}</p>
+            <p className="rightSubtitleDescription">{description}</p>
           </div>
         </div>
         <div className="LikeContainer">
