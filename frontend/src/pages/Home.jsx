@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles/Home.css";
 import MealsCard from "../components/MealsCard";
 import logo from "../assets/logo.png";
@@ -8,9 +7,9 @@ export default function Home() {
     <header className="App-header">
       <h2>
         Ici le carousel
-        <span className="navbar">
+        <main className="navbar">
           <MealsCard />
-        </span>
+        </main>
         !
       </h2>
       <img src={logo} className="App-logo" alt="logo" />
