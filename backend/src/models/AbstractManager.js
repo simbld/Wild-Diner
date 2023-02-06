@@ -1,26 +1,69 @@
 class AbstractManager {
-  constructor({ table }) {
-    this.table = table;
+  constructor({ meals, users }) {
+    this.meals = meals;
+    this.users = users;
   }
 
-  find(id) {
-    return this.connection.query(`select * from  ${this.table} where id = ?`, [
+  // MÉTHODES POUR LA TABLE MEALS
+  findMeal(id) {
+    return this.connection.query(`select * from  ${this.meals} where id = ?`, [
       id,
     ]);
   }
 
-  findAll() {
-    return this.connection.query(`select * from  ${this.table}`);
+  findAllMeals() {
+    return this.connection.query(`select * from  ${this.meals}`);
   }
 
-  delete(id) {
-    return this.connection.query(`delete from ${this.table} where id = ?`, [
+  deleteMeal(id) {
+    return this.connection.query(`delete from ${this.meals} where id = ?`, [
       id,
     ]);
   }
 
-  setConnection(connection) {
-    this.connection = connection;
+  insertMeal(meal) {
+    return this.connection.query(
+      `insert into ${this.meals} (strMeal) values (?)`,
+      [meal.strMeal]
+    );
+  }
+
+  updateMeal(meal) {
+    return this.connection.query(
+      `update ${this.meals} set strMeal = ? where id = ?`,
+      [meal.strMeal, meal.id]
+    );
+  }
+
+  // MÉTHODES POUR LA TABLE USERS
+  findUser(id) {
+    return this.connection.query(`select * from  ${this.users} where id = ?`, [
+      id,
+    ]);
+  }
+
+  findAllUsers() {
+    return this.connection.query(`select * from  ${this.users}`);
+  }
+
+  deleteUser(id) {
+    return this.connection.query(`delete from ${this.users} where id = ?`, [
+      id,
+    ]);
+  }
+
+  insertUser(user) {
+    return this.connection.query(
+      `insert into ${this.users} (name) values (?)`,
+      [user.name]
+    );
+  }
+
+  updateUser(user) {
+    return this.connection.query(
+      `update ${this.users} set name = ? where id = ?`,
+      [user.name, user.id]
+    );
   }
 }
 
