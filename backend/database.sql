@@ -1,319 +1,356 @@
-DROP TABLE IF EXISTS `meals`;
-CREATE TABLE `meals` (
-  id int(11) UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  strMeal varchar(25) NOT NULL,
-  strCategory varchar(25) NOT NULL,
-  strArea varchar(25) NOT NULL,
-  strInstructions varchar(255) NOT NULL,
-  strMealThumb varchar(255) NOT NULL,
-  strTags varchar(25) NOT NULL,
-  strYoutube varchar(255) NOT NULL,
-  strIngredient1 varchar(25) NOT NULL,
-  strIngredient2 varchar(25) NOT NULL,
-  strIngredient3 varchar(25) NOT NULL,
-  strIngredient4 varchar(25) NOT NULL,
-  strIngredient5 varchar(25) NOT NULL,
-  strIngredient6 varchar(25) NOT NULL,
-  strIngredient7 varchar(25) NOT NULL,
-  strIngredient8 varchar(25) NOT NULL,
-  strIngredient9 varchar(25) NOT NULL,
-  strIngredient10 varchar(25) NOT NULL,
-  strIngredient11 varchar(25) NOT NULL,
-  strIngredient12 varchar(25) NOT NULL,
-  strIngredient13 varchar(25) NOT NULL,
-  strIngredient14 varchar(25) NOT NULL,
-  strIngredient15 varchar(25) NOT NULL,
-  strIngredient16 varchar(25) NOT NULL,
-  strIngredient17 varchar(25) NOT NULL,
-  strIngredient18 varchar(25) NOT NULL,
-  strIngredient19 varchar(25) NOT NULL,
-  strIngredient20 varchar(25) NOT NULL,
-  strMeasure1 varchar(25) NOT NULL,
-  strMeasure2 varchar(25) NOT NULL,
-  strMeasure3 varchar(25) NOT NULL,
-  strMeasure4 varchar(25) NOT NULL,
-  strMeasure5 varchar(25) NOT NULL,
-  strMeasure6 varchar(25) NOT NULL,
-  strMeasure7 varchar(25) NOT NULL,
-  strMeasure8 varchar(25) NOT NULL,
-  strMeasure9 varchar(25) NOT NULL,
-  strMeasure10 varchar(25) NOT NULL,
-  strMeasure11 varchar(25) NOT NULL,
-  strMeasure12 varchar(25) NOT NULL,
-  strMeasure13 varchar(25) NOT NULL,
-  strMeasure14 varchar(25) NOT NULL,
-  strMeasure15 varchar(25) NOT NULL,
-  strMeasure16 varchar(25) NOT NULL,
-  strMeasure17 varchar(25) NOT NULL,
-  strMeasure18 varchar(25) NOT NULL,
-  strMeasure19 varchar(25) NOT NULL,
-  strMeasure20 varchar(25) NOT NULL,
-  strSource varchar(255) NOT NULL
+DROP TABLE IF EXISTS User;
+CREATE TABLE User (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  username VARCHAR(255) NOT NULL,
+  hashed_password VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  created_at DATETIME NOT NULL,
+  updated_at DATETIME NOT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
-INSERT INTO `meals` (
-    `id`,
-    `strMeal`,
-    `strCategory`,
-    `strArea`,
-    `strInstructions`,
-    `strMealThumb`,
-    `strTags`,
-    `strYoutube`,
-    `strIngredient1`,
-    `strIngredient2`,
-    `strIngredient3`,
-    `strIngredient4`,
-    `strIngredient5`,
-    `strIngredient6`,
-    `strIngredient7`,
-    `strIngredient8`,
-    `strIngredient9`,
-    `strIngredient10`,
-    `strIngredient11`,
-    `strIngredient12`,
-    `strIngredient13`,
-    `strIngredient14`,
-    `strIngredient15`,
-    `strIngredient16`,
-    `strIngredient17`,
-    `strIngredient18`,
-    `strIngredient19`,
-    `strIngredient20`,
-    `strMeasure1`,
-    `strMeasure2`,
-    `strMeasure3`,
-    `strMeasure4`,
-    `strMeasure5`,
-    `strMeasure6`,
-    `strMeasure7`,
-    `strMeasure8`,
-    `strMeasure9`,
-    `strMeasure10`,
-    `strMeasure11`,
-    `strMeasure12`,
-    `strMeasure13`,
-    `strMeasure14`,
-    `strMeasure15`,
-    `strMeasure16`,
-    `strMeasure17`,
-    `strMeasure18`,
-    `strMeasure19`,
-    `strMeasure20`,
-    `strSource`
+INSERT INTO User (
+    username,
+    hashed_password,
+    email,
+    created_at,
+    updated_at
   )
-VALUES ('52977'),
-  ('Corba'),
-  ('Side'),
-  ('Turkish'),
-  (
-    "Pick through your lentils for any foreign debris, rinse them 2 or 3 times, drain, and set aside.  Fair warning, this will probably turn your lentils into a solid block that you’ll have to break up later
-In a large pot over medium-high heat, sauté the olive oil and the onion with a pinch of salt for about 3 minutes, then add the carrots and cook for another 3 minutes.
-Add the tomato paste and stir it around for around 1 minute. Now add the cumin, paprika, mint, thyme, black pepper, and red pepper as quickly as you can and stir for 10 seconds to bloom the spices. Congratulate yourself on how amazing your house now smells.
-Immediately add the lentils, water, broth, and salt. Bring the soup to a (gentle) boil.
-After it has come to a boil, reduce heat to medium-low, cover the pot halfway, and cook for 15-20 minutes or until the lentils have fallen apart and the carrots are completely cooked.
-After the soup has cooked and the lentils are tender, blend the soup either in a blender or simply use a hand blender to reach the consistency you desire. Taste for seasoning and add more salt if necessary.
-Serve with crushed-up crackers, torn up bread, or something else to add some extra thickness.  You could also use a traditional thickener (like cornstarch or flour), but I prefer to add crackers for some texture and saltiness.  Makes great leftovers, stays good in the fridge for about a week."
-  ),
-  (
-    "https://www.themealdb.com/images/media/meals/58oia61564916529.jpg"
-  ),
-  ('Soup'),
-  ("https://www.youtube.com/watch?v=VVnZd8A84z4"),
-  ("Lentils"),
-  ("Onion"),
-  ("Carrots"),
-  ("Tomato Puree"),
-  ("Cumin"),
-  ("Paprika"),
-  ("Mint"),
-  ("Thyme"),
-  ("Black Pepper"),
-  ("Red Pepper Flakes"),
-  ("Vegetable Stock"),
-  ("Water"),
-  ("Sea Salt"),
-  (" "),
-  (" "),
-  (" "),
-  (" "),
-  (" "),
-  (" "),
-  (" "),
-  ("1 cup "),
-  ("1 large"),
-  ("1 large"),
-  ("1 tbs"),
-  ("2 tsp"),
-  ("1 tsp "),
-  ("1/2 tsp"),
-  ("1/2 tsp"),
-  ("1/4 tsp"),
-  ("1/4 tsp"),
-  ("4 cups "),
-  ("1 cup "),
-  ("Pinch"),
-  (" "),
-  (" "),
-  (" "),
-  (" "),
-  (" "),
-  (" "),
-  (" "),
-  (
-    "https://findingtimeforcooking.com/main-dishes/red-lentil-soup-corba/"
+VALUES (
+    'admin',
+    'admin',
+    'admin@localhost',
+    NOW(),
+    NOW()
   );
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE `users` (
-  id int(11) UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  name varchar(255) NOT NULL,
-  image varchar(255) NOT NULL,
-  email varchar(255) NOT NULL,
-  password varchar(255) NOT NULL
-);
-ENGINE = InnoDB DEFAULT CHARSET = utf8;
-INSERT INTO `users` (
-    `id`,
-    `name`,
-    `image`,
-    `email`,
-    `password`
+DROP TABLE IF EXISTS Meal;
+CREATE TABLE Meal (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  strMeal VARCHAR(255) NOT NULL,
+  strCategory VARCHAR(255) NOT NULL,
+  strArea VARCHAR(255) NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES User(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO Meal (
+    user_id,
+    strMeal,
+    strCategory,
+    strArea
   )
-VALUES ('1'),
-  ('Adnan'),
-  ("http://bit.ly/3RBkTRn"),
-  ('adnan@email.com'),
-  ('aaaaaa'),
-  ('2'),
-  ('Alexis'),
-  ("http://bit.ly/3RxZ31g"),
-  ('alexis@email.com'),
-  ('bbbbbb'),
-  ('3'),
-  ('Benoit'),
-  ("https://bit.ly/3wXWMTO"),
-  ('benoit@email.com'),
-  ('cccccc'),
-  ('4'),
-  ('Charlotte'),
-  ("http://bit.ly/3Y4iQI1"),
-  ('charlotte@email.com'),
-  ('dddddd'),
-  ('5'),
-  ('Edouard'),
-  ("http://bit.ly/3wVl3tF"),
-  ('edouard@email.com'),
-  ('eeeeee'),
-  ('6'),
-  ('Farid'),
-  ("http://bit.ly/3YrEyWs"),
-  ('andrea'),
-  ('ffffff'),
-  ('7'),
-  ('Fred'),
-  ("http://bit.ly/3Ry0zR0"),
-  ('fred@email.com'),
-  ('gggggg'),
-  ('8'),
-  ('Heri'),
-  ("http://bit.ly/3YrETZe"),
-  ('Heri@email.com'),
-  ('hhhhhh'),
-  ('9'),
-  ('Jessy'),
-  ("http://bit.ly/3x0iOVY"),
-  ('Jessy@email.com'),
-  ('iiiiii'),
-  ('10'),
-  ('Justine'),
-  ("http://bit.ly/3RzqgAI"),
-  ('Justine@email.com'),
-  ('jjjjjj'),
-  ('11'),
-  ('Louen'),
-  ("http://bit.ly/40wDp1n"),
-  ('louen@email.com'),
-  ('kkkkkk'),
-  ('12'),
-  ('Mounir'),
-  ("http://bit.ly/3JIMSg5"),
-  ('mounir@email.com'),
-  ('llllll'),
-  ('13'),
-  ('Lucie'),
-  ("http://bit.ly/3HWEYP8"),
-  ('lucie@email.com'),
-  ('mmmmmm'),
-  ('14'),
-  ('Olivier L'),
-  ("http://bit.ly/3JHMoa4"),
-  ('olivier@email.com'),
-  ('nnnnnn'),
-  ('15'),
-  ('Olivier N'),
-  ("http://bit.ly/3X1iXml"),
-  ('oliviern@email.com'),
-  ('oooooo'),
-  ('16'),
-  ('Pierre Yves'),
-  ("http://bit.ly/3jzUpmW"),
-  ('pierreyves@email.com'),
-  ('pppppp'),
-  ('17'),
-  ('Valentin'),
-  ("http://bit.ly/3ldiD6J"),
-  ('valentin@email.com'),
-  ('qqqqqq'),
-  ('18'),
-  ('Rémi'),
-  ("http://bit.ly/3HYE1Wi"),
-  ('remi@email.com'),
-  ('rrrrrr'),
-  ('19'),
-  ('José'),
-  ("http://bit.ly/3I0AhE3"),
-  ('jose@email.com'),
-  ('ssssss'),
-  ('20'),
-  ('Robin'),
-  ("http://bit.ly/3leMYSr"),
-  ('robin@email.com'),
-  ('tttttt'),
-  ('21'),
-  ('Rohan'),
-  ("http://bit.ly/3RBDe0E"),
-  ('rohan@email.com'),
-  ('uuuuuu'),
-  ('22'),
-  ('Romain B'),
-  ("http://bit.ly/3HB5L27"),
-  ('romain@email.com'),
-  ('vvvvvv'),
-  ('23'),
-  ('Romain G'),
-  ("http://bit.ly/3lcUopt"),
-  ('romain@email.com'),
-  ('wwwwww'),
-  ('24'),
-  ('Simon'),
-  ("http://bit.ly/3YoKpLV"),
-  ('simon@email.com'),
-  ('xxxxxx'),
-  ('25'),
-  ('Valentin'),
-  ("http://bit.ly/3ldiD6J"),
-  ('valentin@email.com'),
-  ('yyyyyy'),
-  ('26'),
-  ('Classe'),
-  ("http://bit.ly/3ldiD6J"),
-  ('wild@email.com'),
-  ('zzzzzz');
-DROP TABLE IF EXISTS `users_meals`;
-CREATE TABLE `users_meals` (
-  id int(11) UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  users_id int(11) UNSIGNED NOT NULL,
-  meals_id int(11) UNSIGNED NOT NULL,
-  FOREIGN KEY (users_id) REFERENCES users(id),
-  FOREIGN KEY (meals_id) REFERENCES meals(id)
-);
-ENGINE = InnoDB DEFAULT CHARSET = utf8;
+VALUES (
+    1,
+    'Spaghetti',
+    'Pasta',
+    'Italian'
+  );
+DROP TABLE IF EXISTS Dish;
+CREATE TABLE Dish (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  meal_id INT UNSIGNED NOT NULL,
+  strInstructions TEXT NOT NULL,
+  FOREIGN KEY (meal_id) REFERENCES Meal(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO Dish (meal_id, strInstructions)
+VALUES (1, 'Cook the spaghetti');
+DROP TABLE IF EXISTS Media;
+CREATE TABLE Media (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  dish_id INT UNSIGNED NOT NULL,
+  user_id INT UNSIGNED NOT NULL,
+  type VARCHAR(255) NOT NULL,
+  url VARCHAR(255) NOT NULL,
+  FOREIGN KEY (dish_id) REFERENCES Dish(id),
+  FOREIGN KEY (user_id) REFERENCES User(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO Media (dish_id, user_id, type, url)
+VALUES (
+    1,
+    1,
+    'image',
+    'https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg'
+  );
+DROP TABLE IF EXISTS Ingredient;
+CREATE TABLE Ingredient (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO Ingredient (name)
+VALUES ('Spaghetti');
+DROP TABLE IF EXISTS Dosage;
+CREATE TABLE Dosage (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  ingredient_id INT UNSIGNED NOT NULL,
+  dish_id INT UNSIGNED NOT NULL,
+  quantity FLOAT NOT NULL,
+  unit VARCHAR(255) NOT NULL,
+  FOREIGN KEY (ingredient_id) REFERENCES Ingredient(id),
+  FOREIGN KEY (dish_id) REFERENCES Dish(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO Dosage (ingredient_id, dish_id, quantity, unit)
+VALUES (1, 1, 1, 'kg');
+DROP TABLE IF EXISTS Recipe;
+CREATE TABLE Recipe (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  dish_id INT UNSIGNED NOT NULL,
+  step INT NOT NULL,
+  description TEXT NOT NULL,
+  FOREIGN KEY (dish_id) REFERENCES Dish(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO Recipe (dish_id, step, description)
+VALUES (1, 1, 'Cook the spaghetti');
+DROP TABLE IF EXISTS Tag;
+CREATE TABLE Tag (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO Tag (name)
+VALUES ('Pasta');
+DROP TABLE IF EXISTS DishTag;
+CREATE TABLE DishTag (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  dish_id INT UNSIGNED NOT NULL,
+  tag_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (dish_id) REFERENCES Dish(id),
+  FOREIGN KEY (tag_id) REFERENCES Tag(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO DishTag (dish_id, tag_id)
+VALUES (1, 1);
+DROP TABLE IF EXISTS UserTag;
+CREATE TABLE UserTag (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  tag_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES User(id),
+  FOREIGN KEY (tag_id) REFERENCES Tag(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO UserTag (user_id, tag_id)
+VALUES (1, 1);
+DROP TABLE IF EXISTS MealTag;
+CREATE TABLE MealTag (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  meal_id INT UNSIGNED NOT NULL,
+  tag_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (meal_id) REFERENCES Meal(id),
+  FOREIGN KEY (tag_id) REFERENCES Tag(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO MealTag (meal_id, tag_id)
+VALUES (1, 1);
+DROP TABLE IF EXISTS DishIngredient;
+CREATE TABLE DishIngredient (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  dish_id INT UNSIGNED NOT NULL,
+  ingredient_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (dish_id) REFERENCES Dish(id),
+  FOREIGN KEY (ingredient_id) REFERENCES Ingredient(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO DishIngredient (dish_id, ingredient_id)
+VALUES (1, 1);
+DROP TABLE IF EXISTS MealIngredient;
+CREATE TABLE MealIngredient (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  meal_id INT UNSIGNED NOT NULL,
+  ingredient_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (meal_id) REFERENCES Meal(id),
+  FOREIGN KEY (ingredient_id) REFERENCES Ingredient(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO MealIngredient (meal_id, ingredient_id)
+VALUES (1, 1);
+DROP TABLE IF EXISTS UserIngredient;
+CREATE TABLE UserIngredient (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  ingredient_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES User(id),
+  FOREIGN KEY (ingredient_id) REFERENCES Ingredient(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO UserIngredient (user_id, ingredient_id)
+VALUES (1, 1);
+DROP TABLE IF EXISTS UserMeal;
+CREATE TABLE UserMeal (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  meal_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES User(id),
+  FOREIGN KEY (meal_id) REFERENCES Meal(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO UserMeal (user_id, meal_id)
+VALUES (1, 1);
+DROP TABLE IF EXISTS UserDish;
+CREATE TABLE UserDish (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  dish_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES User(id),
+  FOREIGN KEY (dish_id) REFERENCES Dish(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO UserDish (user_id, dish_id)
+VALUES (1, 1);
+DROP TABLE IF EXISTS UserRecipe;
+CREATE TABLE UserRecipe (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  recipe_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES User(id),
+  FOREIGN KEY (recipe_id) REFERENCES Recipe(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO UserRecipe (user_id, recipe_id)
+VALUES (1, 1);
+DROP TABLE IF EXISTS UserDishIngredient;
+CREATE TABLE UserDishIngredient (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  dish_id INT UNSIGNED NOT NULL,
+  ingredient_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES User(id),
+  FOREIGN KEY (dish_id) REFERENCES Dish(id),
+  FOREIGN KEY (ingredient_id) REFERENCES Ingredient(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+DROP TABLE IF EXISTS UserRecipeIngredient;
+CREATE TABLE UserRecipeIngredient (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  recipe_id INT UNSIGNED NOT NULL,
+  ingredient_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES User(id),
+  FOREIGN KEY (recipe_id) REFERENCES Recipe(id),
+  FOREIGN KEY (ingredient_id) REFERENCES Ingredient(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO UserRecipeIngredient (user_id, recipe_id, ingredient_id)
+VALUES (1, 1, 1);
+DROP TABLE IF EXISTS UserMealIngredient;
+CREATE TABLE UserMealIngredient (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  meal_id INT UNSIGNED NOT NULL,
+  ingredient_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES User(id),
+  FOREIGN KEY (meal_id) REFERENCES Meal(id),
+  FOREIGN KEY (ingredient_id) REFERENCES Ingredient(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO UserMealIngredient (user_id, meal_id, ingredient_id)
+VALUES (1, 1, 1);
+DROP TABLE IF EXISTS UserMealTag;
+CREATE TABLE UserMealTag (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  meal_id INT UNSIGNED NOT NULL,
+  tag_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES User(id),
+  FOREIGN KEY (meal_id) REFERENCES Meal(id),
+  FOREIGN KEY (tag_id) REFERENCES Tag(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO UserMealTag (user_id, meal_id, tag_id)
+VALUES (1, 1, 1);
+DROP TABLE IF EXISTS UserDishTag;
+CREATE TABLE UserDishTag (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  dish_id INT UNSIGNED NOT NULL,
+  tag_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES User(id),
+  FOREIGN KEY (dish_id) REFERENCES Dish(id),
+  FOREIGN KEY (tag_id) REFERENCES Tag(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO UserDishTag (user_id, dish_id, tag_id)
+VALUES (1, 1, 1);
+DROP TABLE IF EXISTS UserRecipeTag;
+CREATE TABLE UserRecipeTag (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  recipe_id INT UNSIGNED NOT NULL,
+  tag_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES User(id),
+  FOREIGN KEY (recipe_id) REFERENCES Recipe(id),
+  FOREIGN KEY (tag_id) REFERENCES Tag(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO UserRecipeTag (user_id, recipe_id, tag_id)
+VALUES (1, 1, 1);
+DROP TABLE IF EXISTS UserIngredientTag;
+CREATE TABLE UserIngredientTag (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  ingredient_id INT UNSIGNED NOT NULL,
+  tag_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES User(id),
+  FOREIGN KEY (ingredient_id) REFERENCES Ingredient(id),
+  FOREIGN KEY (tag_id) REFERENCES Tag(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO UserIngredientTag (user_id, ingredient_id, tag_id)
+VALUES (1, 1, 1);
+DROP TABLE IF EXISTS UserDishIngredientTag;
+CREATE TABLE UserDishIngredientTag (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  dish_id INT UNSIGNED NOT NULL,
+  ingredient_id INT UNSIGNED NOT NULL,
+  tag_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES User(id),
+  FOREIGN KEY (dish_id) REFERENCES Dish(id),
+  FOREIGN KEY (ingredient_id) REFERENCES Ingredient(id),
+  FOREIGN KEY (tag_id) REFERENCES Tag(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO UserDishIngredientTag (user_id, dish_id, ingredient_id, tag_id)
+VALUES (1, 1, 1, 1);
+DROP TABLE IF EXISTS UserMealIngredientTag;
+CREATE TABLE UserMealIngredientTag (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  meal_id INT UNSIGNED NOT NULL,
+  ingredient_id INT UNSIGNED NOT NULL,
+  tag_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES User(id),
+  FOREIGN KEY (meal_id) REFERENCES Meal(id),
+  FOREIGN KEY (ingredient_id) REFERENCES Ingredient(id),
+  FOREIGN KEY (tag_id) REFERENCES Tag(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO UserMealIngredientTag (user_id, meal_id, ingredient_id, tag_id)
+VALUES (1, 1, 1, 1);
+DROP TABLE IF EXISTS UserRecipeIngredientTag;
+CREATE TABLE UserRecipeIngredientTag (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  recipe_id INT UNSIGNED NOT NULL,
+  ingredient_id INT UNSIGNED NOT NULL,
+  tag_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES User(id),
+  FOREIGN KEY (recipe_id) REFERENCES Recipe(id),
+  FOREIGN KEY (ingredient_id) REFERENCES Ingredient(id),
+  FOREIGN KEY (tag_id) REFERENCES Tag(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO UserRecipeIngredientTag (user_id, recipe_id, ingredient_id, tag_id)
+VALUES (1, 1, 1, 1);
+DROP TABLE IF EXISTS UserRecipeIngredient;
+CREATE TABLE UserRecipeIngredient (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  recipe_id INT UNSIGNED NOT NULL,
+  ingredient_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES User(id),
+  FOREIGN KEY (recipe_id) REFERENCES Recipe(id),
+  FOREIGN KEY (ingredient_id) REFERENCES Ingredient(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO UserRecipeIngredient (user_id, recipe_id, ingredient_id)
+VALUES (1, 1, 1);
+DROP TABLE IF EXISTS UserDishIngredient;
+CREATE TABLE UserDishIngredient (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  dish_id INT UNSIGNED NOT NULL,
+  ingredient_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES User(id),
+  FOREIGN KEY (dish_id) REFERENCES Dish(id),
+  FOREIGN KEY (ingredient_id) REFERENCES Ingredient(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO UserDishIngredient (user_id, dish_id, ingredient_id)
+VALUES (1, 1, 1);
+DROP TABLE IF EXISTS UserMealIngredient;
+CREATE TABLE UserMealIngredient (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  meal_id INT UNSIGNED NOT NULL,
+  ingredient_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES User(id),
+  FOREIGN KEY (meal_id) REFERENCES Meal(id),
+  FOREIGN KEY (ingredient_id) REFERENCES Ingredient(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO UserMealIngredient (user_id, meal_id, ingredient_id)
+VALUES (1, 1, 1);
