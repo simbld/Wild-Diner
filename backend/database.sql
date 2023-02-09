@@ -30,18 +30,57 @@ CREATE TABLE Meal (
   strArea VARCHAR(255) NOT NULL,
   FOREIGN KEY (user_id) REFERENCES User(id)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8;
-INSERT INTO Meal (
-    user_id,
-    strMeal,
-    strCategory,
-    strArea
-  )
-VALUES (
-    1,
-    'Spaghetti',
-    'Pasta',
-    'Italian'
-  );
+INSERT INTO Meal (user_id, strMeal, strCategory, strArea)
+VALUES (1, 'Spaghetti', 'Pasta', 'Italian');
+DROP TABLE IF EXISTS Likes;
+CREATE TABLE Likes (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  meal_id INT UNSIGNED NOT NULL,
+  created_at DATETIME NOT NULL,
+  updated_at DATETIME NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES User(id),
+  FOREIGN KEY (meal_id) REFERENCES Meal(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO Likes (user_id, meal_id, created_at, updated_at)
+VALUES (1, 1, NOW(), NOW());
+DROP TABLE IF EXISTS Favorites;
+CREATE TABLE Favorites (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  meal_id INT UNSIGNED NOT NULL,
+  created_at DATETIME NOT NULL,
+  updated_at DATETIME NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES User(id),
+  FOREIGN KEY (meal_id) REFERENCES Meal(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO Favorites (user_id, meal_id, created_at, updated_at)
+VALUES (1, 1, NOW(), NOW());
+DROP TABLE IF EXISTS Dislikes;
+CREATE TABLE Dislikes (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  meal_id INT UNSIGNED NOT NULL,
+  created_at DATETIME NOT NULL,
+  updated_at DATETIME NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES User(id),
+  FOREIGN KEY (meal_id) REFERENCES Meal(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO Dislikes (user_id, meal_id, created_at, updated_at)
+VALUES (1, 1, NOW(), NOW());
+DROP TABLE IF EXISTS Comments;
+CREATE TABLE Comments (
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  meal_id INT UNSIGNED NOT NULL,
+  text TEXT NOT NULL,
+  created_at DATETIME NOT NULL,
+  updated_at DATETIME NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES User(id),
+  FOREIGN KEY (meal_id) REFERENCES Meal(id)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8;
+INSERT INTO Comments (user_id, meal_id, text, created_at, updated_at)
+VALUES (1, 1, 'This is a comment', NOW(), NOW());
 DROP TABLE IF EXISTS Dish;
 CREATE TABLE Dish (
   id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
