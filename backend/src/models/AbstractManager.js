@@ -1,36 +1,35 @@
 class AbstractManager {
-  constructor({ meals, users }) {
-    this.meals = meals;
+  constructor({ meal, users, comments }) {
+    this.meal = meal;
     this.users = users;
+    this.comments = comments;
   }
 
-  // MÉTHODES POUR LA TABLE MEALS
+  // MÉTHODES POUR LA TABLE MEAL
   findMeal(id) {
-    return this.connection.query(`select * from  ${this.meals} where id = ?`, [
+    return this.connection.query(`select * from  ${this.meal} where id = ?`, [
       id,
     ]);
   }
 
-  findAllMeals() {
-    return this.connection.query(`select * from  ${this.meals}`);
+  findAllMeal() {
+    return this.connection.query(`select * from  ${this.meal}`);
   }
 
   deleteMeal(id) {
-    return this.connection.query(`delete from ${this.meals} where id = ?`, [
-      id,
-    ]);
+    return this.connection.query(`delete from ${this.meal} where id = ?`, [id]);
   }
 
   insertMeal(meal) {
     return this.connection.query(
-      `insert into ${this.meals} (strMeal) values (?)`,
+      `insert into ${this.meal} (strMeal) values (?)`,
       [meal.strMeal]
     );
   }
 
   updateMeal(meal) {
     return this.connection.query(
-      `update ${this.meals} set strMeal = ? where id = ?`,
+      `update ${this.meal} set strMeal = ? where id = ?`,
       [meal.strMeal, meal.id]
     );
   }
@@ -63,6 +62,39 @@ class AbstractManager {
     return this.connection.query(
       `update ${this.users} set name = ? where id = ?`,
       [user.name, user.id]
+    );
+  }
+
+  // MÉTHODES POUR LA TABLE COMMENTS
+  findComment(id) {
+    return this.connection.query(
+      `select * from ${this.comments} where id = ?`,
+      [id]
+    );
+  }
+
+  findAllComments() {
+    return this.connection.query(`select * from ${this.comments}`);
+  }
+
+  deleteComment(id) {
+    return this.connection.query(`delete from ${this.comments} where id = ?`, [
+      id,
+    ]);
+  }
+
+  insertComment(comment) {
+    return this.connection.query(
+      `insert into ${this.comments} (text, userId, mealId) values (?,?,?)`,
+      [comment.text, comment.userId, comment.mealId]
+    );
+  }
+
+  updateComment(comment) {
+    return this.connection.query(
+      `update ${this.comments} set text =
+      ? where id = ?`,
+      [comment.text, comment.id]
     );
   }
 }

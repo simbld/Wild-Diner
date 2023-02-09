@@ -1,7 +1,7 @@
 const models = require("../models");
 
 const browse = (req, res) => {
-  models.meals
+  models.meal
     .findAll()
     .then(([rows]) => {
       res.send(rows);
@@ -13,7 +13,7 @@ const browse = (req, res) => {
 };
 
 const read = (req, res) => {
-  models.meals
+  models.meal
     .find(req.params.id)
     .then(([rows]) => {
       if (rows[0] == null) {
@@ -29,14 +29,14 @@ const read = (req, res) => {
 };
 
 const edit = (req, res) => {
-  const meals = req.body;
+  const meal = req.body;
 
   // TODO validations (length, format...)
 
-  meals.id = parseInt(req.params.id, 10);
+  meal.id = parseInt(req.params.id, 10);
 
-  models.meals
-    .update(meals)
+  models.meal
+    .update(meal)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
@@ -51,14 +51,14 @@ const edit = (req, res) => {
 };
 
 const add = (req, res) => {
-  const meals = req.body;
+  const meal = req.body;
 
   // TODO validations (length, format...)
 
-  models.meals
-    .insert(meals)
+  models.meal
+    .insert(meal)
     .then(([result]) => {
-      res.location(`/mealss/${result.insertId}`).sendStatus(201);
+      res.location(`/meals/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
       console.error(err);
@@ -67,7 +67,7 @@ const add = (req, res) => {
 };
 
 const destroy = (req, res) => {
-  models.meals
+  models.meal
     .delete(req.params.id)
     .then(([result]) => {
       if (result.affectedRows === 0) {
