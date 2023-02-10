@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import PropTypes from "prop-types";
 
-export default function FetchData({ setMeals }) {
+export default function FetchMeals({ setMeals }) {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
@@ -16,6 +16,6 @@ export default function FetchData({ setMeals }) {
   return null;
 }
 
-FetchData.propTypes = {
+FetchMeals.propTypes = {
   setMeals: PropTypes.func.isRequired,
 };
