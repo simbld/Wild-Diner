@@ -1,0 +1,52 @@
+.navBar {
+  background-color: #000000;
+  color: #ffffff;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.containerTitreAcceuil {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.titreAcceuil {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.explore {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+
+.flicker {
+  animation: flicker 100s infinite;
+}
+
+.AppLogo {
+  width: 100px;
+  height: 100px;
+  margin: 0 20px;
+}
+
+.AppLogo:hover {
+  animation: AppLogo 1s infinite;
+}
