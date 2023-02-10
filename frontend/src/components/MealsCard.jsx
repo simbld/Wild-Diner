@@ -1,13 +1,16 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import PropTypes from "prop-types";
 import React, { useState } from "react";
+import "../styles/MealsCard.css";
 
 export default function MealsCard({
-  foodImage,
-  mealName,
-  description,
-  price,
+  mealsName,
+  mealsThumb,
+  mealsInstructions,
+  mealsCategory,
+  mealsIngredients,
+  mealsMeasures,
+  area,
+  mealsTags,
   initialLikeCount,
   initialIsFavorite,
 }) {
@@ -20,38 +23,47 @@ export default function MealsCard({
   }
   return (
     <div className="cardContainer">
+      <div className="rightContainer">{area}</div>
       <div className="leftContainer">
-        <figure className="imgContainer">
-          <img src={foodImage} alt={mealName} />
-        </figure>
+        {mealsTags}
+        <div className="cardDescription">
+          <figure>
+            <img src={mealsThumb} alt={mealsName} />
+            <figcaption>
+              <h3>{mealsName}</h3>
+              <p>{mealsInstructions}</p>
+            </figcaption>
+          </figure>
+        </div>
       </div>
-      <div className="cardDescription">
-        <div className="media">
-          <div className="mediaContent">
-            <p className="rightContainer">{mealName}</p>
-            <p className="rightSubtitleContainer">{price} €</p>
+      <div className="mealsCategory">
+        {mealsCategory}
+        <div className="mealsContent">
+          {mealsIngredients}
+          {mealsMeasures}
+        </div>
+      </div>
+      <div className="likeCount">{likeCount}</div>
 
-            <p className="rightSubtitleDescription">{description}</p>
-          </div>
-        </div>
-        <div className="LikeContainer">
-          <div
-            id="favorite"
-            onClick={handleClickFavorite}
-            className={isFavorite ? "isFavorite" : "notFavorite"}
-          />
-          <span className="likeCount">{likeCount}</span>
-        </div>
-      </div>
+      <div
+        id="favorite"
+        type="button"
+        className={isFavorite ? "isFavorite" : "notFavorite"}
+        onClick={handleClickFavorite}
+      />
     </div>
   );
 }
 
 MealsCard.propTypes = {
-  mealName: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  foodImage: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
+  mealsName: PropTypes.string.isRequired,
+  mealsTags: PropTypes.string.isRequired,
+  mealsInstructions: PropTypes.string.isRequired,
+  mealsCategory: PropTypes.string.isRequired,
+  mealsIngredients: PropTypes.string.isRequired,
+  mealsMeasures: PropTypes.string.isRequired,
+  mealsThumb: PropTypes.string.isRequired,
+  area: PropTypes.string.isRequired,
   initialIsFavorite: PropTypes.bool.isRequired,
   initialLikeCount: PropTypes.number.isRequired,
 };
