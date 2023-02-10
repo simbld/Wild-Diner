@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
-import React, { useState } from "react";
 import "../styles/MealsCard.css";
+import Favorite from "./Favorite";
 
 export default function MealsCard({
   mealsName,
@@ -11,16 +11,7 @@ export default function MealsCard({
   mealsMeasures,
   area,
   mealsTags,
-  initialLikeCount,
-  initialIsFavorite,
 }) {
-  const [likeCount, setLikeCount] = useState(initialLikeCount);
-  const [isFavorite, setIsFavorite] = useState(initialIsFavorite);
-
-  function handleClickFavorite() {
-    setIsFavorite(!isFavorite);
-    setLikeCount(isFavorite ? likeCount - 1 : likeCount + 1);
-  }
   return (
     <div className="cardContainer">
       <div className="rightContainer">{area}</div>
@@ -43,14 +34,9 @@ export default function MealsCard({
           {mealsMeasures}
         </div>
       </div>
-      <div className="likeCount">{likeCount}</div>
-
-      <div
-        id="favorite"
-        type="button"
-        className={isFavorite ? "isFavorite" : "notFavorite"}
-        onClick={handleClickFavorite}
-      />
+      <div>
+        <Favorite />
+      </div>
     </div>
   );
 }
@@ -64,6 +50,4 @@ MealsCard.propTypes = {
   mealsMeasures: PropTypes.string.isRequired,
   mealsThumb: PropTypes.string.isRequired,
   area: PropTypes.string.isRequired,
-  initialIsFavorite: PropTypes.bool.isRequired,
-  initialLikeCount: PropTypes.number.isRequired,
 };
