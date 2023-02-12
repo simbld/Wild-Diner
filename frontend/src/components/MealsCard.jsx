@@ -1,6 +1,8 @@
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "../styles/MealsCard.css";
 import Favorite from "./Favorite";
+import maximize from "../assets/maximize-2.svg";
 
 export default function MealsCard({
   mealsName,
@@ -12,29 +14,33 @@ export default function MealsCard({
   area,
   mealsTags,
 }) {
+  const [showDetails, setShowDetails] = useState(false);
+
   return (
     <div className="cardContainer">
-      <div className="rightContainer">{area}</div>
-      <div className="leftContainer">
-        {mealsTags}
-        <div className="cardDescription">
-          <figure>
-            <img src={mealsThumb} alt={mealsName} />
-            <figcaption>
-              <h3>{mealsName}</h3>
-              <p>{mealsInstructions}</p>
-            </figcaption>
-          </figure>
-        </div>
+      <div className="mealThumbContainer">
+        <img src={mealsThumb} alt={mealsName} className="mealsThumb" />
+        <div className="mealName">{mealsName}</div>
       </div>
-      <div className="mealsCategory">
-        {mealsCategory}
-        <div className="mealsContent">
-          {mealsIngredients}
-          {mealsMeasures}
-        </div>
+      <div className="mealDetailsContainer">
+        <div className="mealCategory">{mealsCategory}</div>
+        <div className="mealArea">{area}</div>
+        <div className="mealTags">{mealsTags}</div>
+        <button
+          className="instructionsButton"
+          onClick={() => setShowDetails(!showDetails)}
+          type="button"
+        >
+          <img src={maximize} alt="extend icon" />
+        </button>
+        {showDetails && (
+          <div className="mealDetails">
+            <div className="mealInstructions">{mealsInstructions}</div>
+            <div className="mealIngredients">{mealsIngredients}</div>
+            <div className="mealMeasures">{mealsMeasures}</div>
+          </div>
+        )}
       </div>
-
       <Favorite />
     </div>
   );

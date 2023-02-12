@@ -1,110 +1,41 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  font-family: -apple-system, BlinkMacSystemFont, "PoiretOne-Regular", "Lato-Light", "Grandstander", "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue";
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: 'PoiretOne-Regular';
+  src: url('./assets/fonts/PoiretOne-Regular.ttf') format('truetype');
 }
 
-.App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+@font-face {
+  font-family: 'Lato-Light';
+  src: url('./assets/fonts/Lato-Light.ttf') format('truetype');
 }
 
-.AppBackground {
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-button {
-  font-size: calc(10px + 2vmin);
-}
-
-body {
-  width: 100%;
-  height: 100%;
-  margin: auto;
-  font-family: "Grandstander", cursive;
+@font-face {
+  font-family: 'riesling';
+  src: url('./assets/fonts/riesling.ttf') format('truetype');
 }
 
 h1 {
-  text-align: center;
+  font-family: 'PoiretOne-Regular';
 }
 
-.imgContainer {
-  width: 120px;
+h2 {
+  font-family: 'riesling';
 }
 
-.imgContainer img {
-  width: 100%;
-}
-
-.cardContent {
-  padding-left: 15px;
-}
-
-.leftContainer {
-  display: flex;
-  align-items: center;
-  color: black;
-}
-
-.rightContainer {
-  display: flex;
-  align-items: center;
-  color: red;
-}
-
-.cardContainer {
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid lightgrey;
-  margin-top: 25px;
-}
-
-.isFavorite {
-  width: 10px;
-  height: 10px;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/35/Emoji_u2665.svg");
-  background-size: 100%;
-  align-self: flex-start;
-  padding: 20px;
-}
-
-.notFavorite {
-  width: 10px;
-  height: 10px;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4f/Ei-heart.svg");
-  background-size: 100%;
-  align-self: flex-start;
-  padding: 20px;
-}
-
-.likeCount {
-  color: rgb(5, 4, 2);
-  margin-left: 40%;
+h3 {
+  font-family: 'Lato-Light';
 }
