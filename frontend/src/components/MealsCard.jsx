@@ -34,9 +34,8 @@ export default function MealsCard({
           {mealsMeasures}
         </div>
       </div>
-      <div>
-        <Favorite />
-      </div>
+
+      <Favorite />
     </div>
   );
 }

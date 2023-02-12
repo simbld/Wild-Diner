@@ -1,26 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import Home from "./pages/Home";
-import MealsCard from "./components/MealsCard";
-import FetchMeals from "./components/FetchMeals";
+import "./styles/App.css";
+import restaurant from "./assets/restaurant.png";
 
 function App() {
-  const [meals, setMeals] = useState([]);
-
   return (
-    <div className="App">
+    <div className="App" src={restaurant} alt="background">
       <Home />
-      <FetchMeals setMeals={setMeals} />
-      {meals.map((meal) => (
-        <MealsCard
-          key={meal.idMeal}
-          foodImage={meal.strMealThumb}
-          mealName={meal.strMeal}
-          description={meal.strInstructions}
-          area={meal.strArea}
-          initialLikeCount={0}
-          initialIsFavorite={false}
-        />
-      ))}
     </div>
   );
 }
