@@ -1,21 +1,24 @@
-import { useEffect } from "react";
-import PropTypes from "prop-types";
+import { useState } from "react";
+import MealsCard from "./MealsCard";
+import FetchMeals from "./FetchMeals";
 
-export default function FetchData({ setMeals }) {
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(
-        "https://www.themealdb.com/api/json/v2/9973533/search.php?s="
-      );
-      const data = await response.json();
-      setMeals(data.meals);
-    };
-    fetchData();
-  }, [setMeals]);
+export default function FetchData() {
+  const [meals, setMeals] = useState([]);
 
-  return null;
+  return (
+    <div className="App">
+      <FetchMeals setMeals={setMeals} />
+      {meals.map((meal) => (
+        <MealsCard
+          key={meal.idMeal}
+          foodImage={meal.strMealThumb}
+          mealsName={meal.strMeal}
+          mealsInstructions={meal.strInstructions}
+          area={meal.strArea}
+          initialLikeCount={0}
+          initialIsFavorite={false}
+        />
+      ))}
+    </div>
+  );
 }
-
-FetchData.propTypes = {
-  setMeals: PropTypes.func.isRequired,
-};

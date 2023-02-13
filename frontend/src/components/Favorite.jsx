@@ -1,26 +1,28 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
-import PropTypes from "prop-types";
 import React, { useState } from "react";
+import PropTypes from "prop-types";
+import LikeCounter from "./LikeCounter";
 
 export default function Favorite({ initialLikeCount, initialIsFavorite }) {
   const [likeCount, setLikeCount] = useState(initialLikeCount);
   const [isFavorite, setIsFavorite] = useState(initialIsFavorite);
 
-  function handleClickFavorite() {
+  function handleClick() {
     setIsFavorite(!isFavorite);
     setLikeCount(isFavorite ? likeCount - 1 : likeCount + 1);
   }
+
   return (
     <div className="cardContainer">
-      <div className="likeCount">{likeCount}</div>
+      <LikeCounter initialLikeCount={likeCount} />
       <div
-        id="favorite"
+        id="favorite-button"
         type="button"
         className={isFavorite ? "isFavorite" : "notFavorite"}
-        onClick={handleClickFavorite}
-        onKeyDown={handleClickFavorite}
+        onClick={handleClick}
+        onKeyDown={handleClick}
         role="button"
         tabIndex="0"
+        aria-label="Like/Dislike"
       />
     </div>
   );
