@@ -1,4 +1,7 @@
 body {
+  background-image: url('../assets/restaurant.png');
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 100%;
   height: 100%;
   margin: auto;
@@ -34,8 +37,109 @@ h1 {
 
 h2 {
   font-family: 'riesling';
+  font-size: 150%;
 }
 
 h3 {
   font-family: 'Lato-Light';
+}
+
+.homeHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border-radius: 20%;
+  ;
+  top: 50%;
+}
+
+
+button {
+  border: none;
+  padding: 100%;
+  border-radius: 20%;
+}
+
+input[type="search"] {
+  font-size: 20px;
+  padding: 15px;
+  border: none;
+  border-radius: 20px;
+}
+
+.homeTitle {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  text-align: center;
+  font-size: 1000%;
+  color: #7a9c8e;
+  text-shadow: 0 0 0px #e1ebf5, 0 0 1px #e1ebf5, 0 0 4px #e1ebf5, 0 0 10px #e1ebf5, 0 0 8px #e1ebf5, 0 0 6px #e1ebf5, 0 0 3px #e1ebf5;
+  animation: neon 3s ease-in-out infinite alternate;
+}
+
+@keyframes neon {
+  to {
+    text-shadow: 0 0 2px #745f01, 0 0 4px #745f01, 0 0 6px #745f01, 0 0 8px #c1a112, 0 0 6px #745f01, 0 0 4px #745f01, 0 0 2px #745f01;
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .homeTitle {
+    font-size: 28px;
+  }
+}
+
+.search input[type="search"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.containerHome {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.search-result {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.search-result__item {
+  width: 20%;
+  margin: 10px;
+  text-align: center;
+}
+
+.search-result__item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.search-result__item h3 {
+  margin-top: 10px;
+  font-size: 20px;
 }

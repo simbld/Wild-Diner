@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <div className="footer">
       <div className="footerContent">
-        <h3>© 2021 - Gastronomie</h3>
+        <h3>© Simon Bullado 2023 - Gastronomie</h3>
       </div>
     </div>
   );
