@@ -1,0 +1,22 @@
+.home__header {
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.home__header h1 {
+  margin: 0;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.home__searchbar {
+  margin-bottom: 20px;
+}
+
+.home__results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
