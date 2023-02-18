@@ -1,0 +1,34 @@
+/* Define global variables */
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$font-family: "Lato", sans-serif;
+
+/* Apply variables to elements */
+html,
+body {
+  font-family: $font-family;
+  font-size: 16px;
+  height: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/* Add custom styles */
+.navbar {
+  background-color: $primary-color;
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: $primary-color;
+  border-color: $primary-color;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: $secondary-color;
+  border-color: $secondary-color;
+  color: #fff;
+}

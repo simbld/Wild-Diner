@@ -5,18 +5,15 @@ class MealsManager extends AbstractManager {
     super({ table: "meals" });
   }
 
-  insert(meals) {
-    return this.connection.query(
-      `insert into ${this.table} (title) values (?)`,
-      [meals.title]
-    );
+  insert(meal) {
+    return this.connection.query("insert into meals set ?", [meal]);
   }
 
-  update(meals) {
-    return this.connection.query(
-      `update ${this.table} set title = ? where id = ?`,
-      [meals.title, meals.id]
-    );
+  update(meal) {
+    return this.connection.query("update meals set ? where id = ?", [
+      meal,
+      meal.id,
+    ]);
   }
 }
 

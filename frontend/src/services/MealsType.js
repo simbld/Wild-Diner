@@ -13,6 +13,10 @@ const MealsType = PropTypes.shape({
   area: PropTypes.string.isRequired,
   initialIsFavorite: PropTypes.bool.isRequired,
   initialLikeCount: PropTypes.number.isRequired,
+  dateAdded: PropTypes.instanceOf(Date),
+  dateModified: PropTypes.instanceOf(Date),
+  createdBy: PropTypes.string,
+  updatedBy: PropTypes.string,
 });
 
 export default MealsType;

@@ -1,57 +1,19 @@
-/* eslint-disable consistent-return */
-/* eslint-disable no-unused-vars */
-const jwt = require("jsonwebtoken");
 const models = require("../models");
 
-const handleUnauthorized = (res) => {
-  return res.sendStatus(401);
-};
-
-const handleError = (res, err) => {
-  console.error(err);
-  return res.sendStatus(500);
-};
-
-const authenticateJWT = (req, res, next) => {
-  const authorizationHeader = req.headers.authorization;
-
-  if (authorizationHeader) {
-    const token = authorizationHeader.split(" ")[1];
-
-    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
-      if (err) {
-        return handleError(res, err);
-      }
-
-      req.user = user;
-      next();
-    });
-  } else {
-    return handleUnauthorized(res);
-  }
-  return new Promise((resolve, reject) => {
-    resolve();
-    reject();
-  }); // TODO remove this line when you implement this function properly (see below) and remove the eslint-disable above too :)
-};
-
 const browse = (req, res) => {
-  models.meals
+  models.meal
     .findAll()
     .then(([rows]) => {
       res.send(rows);
     })
     .catch((err) => {
-      handleError(res, err);
+      console.error(err);
+      res.sendStatus(500);
     });
-  return new Promise((resolve, reject) => {
-    resolve();
-    reject();
-  });
 };
 
 const read = (req, res) => {
-  models.meals
+  models.meal
     .find(req.params.id)
     .then(([rows]) => {
       if (rows[0] == null) {
@@ -61,75 +23,63 @@ const read = (req, res) => {
       }
     })
     .catch((err) => {
-      handleError(res, err);
+      console.error(err);
+      res.sendStatus(500);
     });
-  return new Promise((resolve, reject) => {
-    resolve();
-    reject();
-  });
 };
 
 const edit = (req, res) => {
-  const meals = req.body;
+  const meal = req.body;
 
   // TODO validations (length, format...)
 
-  meals.id = parseInt(req.params.id, 10);
+  meal.id = parseInt(req.params.id, 10);
 
-  models.meals
-    .update(meals)
+  models.meal
+    .update(meal)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
       } else {
-        res.sendStatus(200);
+        res.sendStatus(204);
       }
     })
     .catch((err) => {
-      handleError(res, err);
+      console.error(err);
+      res.sendStatus(500);
     });
-  return new Promise((resolve, reject) => {
-    resolve();
-    reject();
-  });
 };
 
 const add = (req, res) => {
-  const meals = req.body;
+  const meal = req.body;
 
   // TODO validations (length, format...)
 
-  models.meals
-    .insert(meals)
+  models.meal
+    .insert(meal)
     .then(([result]) => {
-      res.status(201).send({ id: result.insertId });
+      res.location(`/meals/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
-      handleError(res, err);
+      console.error(err);
+      res.sendStatus(500);
     });
-  return new Promise((resolve, reject) => {
-    resolve();
-    reject();
-  });
 };
 
-const remove = (req, res) => {
-  models.meals
+const destroy = (req, res) => {
+  models.meal
     .delete(req.params.id)
     .then(([result]) => {
       if (result.affectedRows === 0) {
         res.sendStatus(404);
       } else {
-        res.sendStatus(200);
+        res.sendStatus(204);
       }
     })
     .catch((err) => {
-      handleError(res, err);
+      console.error(err);
+      res.sendStatus(500);
     });
-  return new Promise((resolve, reject) => {
-    resolve();
-    reject();
-  });
 };
 
 module.exports = {
@@ -137,6 +87,5 @@ module.exports = {
   read,
   edit,
   add,
-  remove,
-  authenticateJWT,
+  destroy,
 };

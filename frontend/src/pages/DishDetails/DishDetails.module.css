@@ -1,0 +1,55 @@
+.dish-details {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.dish-details__image-wrapper {
+  flex: 0 0 50%;
+  max-width: 50%;
+  margin-right: 20px;
+}
+
+.dish-details__image {
+  width: 100%;
+}
+
+.dish-details__info-wrapper {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.dish-details__info {
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.dish-details__title {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.dish-details__category {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.dish-details__ingredients {
+  margin-top: 20px;
+}
+
+.dish-details__ingredient {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+
+  .dish-details__image-wrapper,
+  .dish-details__info-wrapper {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-right: 0;
+  }
+}
