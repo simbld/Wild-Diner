@@ -1,108 +1,145 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  background-image: url('../assets/restaurant.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  font-family: -apple-system, BlinkMacSystemFont, "PoiretOne-Regular", "Lato-Light", "Grandstander", "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue";
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'PoiretOne-Regular';
+  src: url('./assets/fonts/PoiretOne-Regular.ttf') format('truetype');
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: 'Lato-Light';
+  src: url('./assets/fonts/Lato-Light.ttf') format('truetype');
 }
 
-.App-header {
-  background-image: url("./assets/restaurant.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-button {
-  font-size: calc(10px + 2vmin);
-}
-
-body {
-  width: 100%;
-  height: 100%;
-  margin: auto;
-  font-family: "Grandstander", cursive;
+@font-face {
+  font-family: 'riesling';
+  src: url('./assets/fonts/riesling.ttf') format('truetype');
 }
 
 h1 {
+  font-family: 'PoiretOne-Regular';
+}
+
+h2 {
+  font-family: 'riesling';
+  font-size: 150%;
+}
+
+h3 {
+  font-family: 'Lato-Light';
+}
+
+.homeHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border-radius: 20%;
+  ;
+  top: 50%;
+}
+
+
+button {
+  border: none;
+  padding: 100%;
+  border-radius: 20%;
+}
+
+input[type="search"] {
+  font-size: 20px;
+  padding: 15px;
+  border: none;
+  border-radius: 20px;
+}
+
+.homeTitle {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  text-align: center;
+  font-size: 1000%;
+  color: #7a9c8e;
+  text-shadow: 0 0 0px #e1ebf5, 0 0 1px #e1ebf5, 0 0 4px #e1ebf5, 0 0 10px #e1ebf5, 0 0 8px #e1ebf5, 0 0 6px #e1ebf5, 0 0 3px #e1ebf5;
+  animation: neon 3s ease-in-out infinite alternate;
+}
+
+@keyframes neon {
+  to {
+    text-shadow: 0 0 2px #745f01, 0 0 4px #745f01, 0 0 6px #745f01, 0 0 8px #c1a112, 0 0 6px #745f01, 0 0 4px #745f01, 0 0 2px #745f01;
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .homeTitle {
+    font-size: 28px;
+  }
+}
+
+.search input[type="search"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.containerHome {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.search-result {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.search-result__item {
+  width: 20%;
+  margin: 10px;
   text-align: center;
 }
 
-.imgContainer {
-  width: 120px;
-}
-
-.imgContainer img {
+.search-result__item img {
   width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
-.cardContent {
-  padding-left: 15px;
-}
-
-.leftContainer {
-  display: flex;
-  align-items: center;
-  color: black;
-}
-
-.rightContainer {
-  display: flex;
-  align-items: center;
-  color: red;
-}
-
-.cardContainer {
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid lightgrey;
-  margin-top: 25px;
-}
-
-.isFavorite {
-  width: 10px;
-  height: 10px;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/35/Emoji_u2665.svg");
-  background-size: 100%;
-  align-self: flex-start;
-  padding: 20px;
-}
-
-.notFavorite {
-  width: 10px;
-  height: 10px;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4f/Ei-heart.svg");
-  background-size: 100%;
-  align-self: flex-start;
-  padding: 20px;
-}
-
-.likeCount {
-  color: rgb(5, 4, 2);
-  margin-left: 40%;
+.search-result__item h3 {
+  margin-top: 10px;
+  font-size: 20px;
 }

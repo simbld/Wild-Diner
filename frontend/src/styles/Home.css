@@ -1,52 +1,55 @@
-.navBar {
-  background-color: #000000;
-  color: #ffffff;
-  height: 50px;
-  width: 100%;
-  position: fixed;
+.nav-link {
+  position: relative;
+  width: 33.333%;
+  display: table-cell;
+  text-align: center;
+  color: #949494;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: 0.2s ease color;
+}
+
+.nav-link:before,
+.nav-link:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.2s ease transform;
+}
+
+.nav-link:before {
   top: 0;
-  left: 0;
-  z-index: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  box-sizing: border-box;
+  left: 10px;
+  width: 6px;
+  height: 6px;
 }
 
-.containerTitreAcceuil {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-  box-sizing: border-box;
+.nav-link:after {
+  top: 5px;
+  left: 18px;
+  width: 4px;
+  height: 4px;
 }
 
-.titreAcceuil {
-  font-size: 20px;
-  font-weight: bold;
-  color: #ffffff;
-  text-decoration: none;
+.nav-link:nth-child(1):before {
+  background-color: yellow;
 }
 
-.explore {
-  font-size: 20px;
-  font-weight: bold;
-  color: #ffffff;
-  text-decoration: none;
+.nav-link:nth-child(1):after {
+  background-color: red;
 }
 
-
-.flicker {
-  animation: flicker 100s infinite;
+.nav-link:nth-child(2):before {
+  background-color: #00e2ff;
 }
 
-.AppLogo {
-  width: 100px;
-  height: 100px;
-  margin: 0 20px;
+.nav-link:nth-child(2):after {
+  background-color: #89ff00;
 }
 
-.AppLogo:hover {
-  animation: AppLogo 1s infinite;
+.nav-link:nth-child(3):before {
+  background-color: #949494
 }
